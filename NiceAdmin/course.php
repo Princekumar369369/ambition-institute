@@ -117,8 +117,8 @@
                             </div>
                             <div class="modal-body text-center">
                                 <form id='del-course-modal'>
-                                    <input type="number" id='course_id' name='course-id'>
-                                    <input type="text" id='course_img' name='course-img'>
+                                    <input type="number" id='course_id' hidden name='course-id'>
+                                    <input type="text" id='course_img' hidden name='course-img'>
                                 </form>
                                 <i class="bi bi-exclamation-triangle h3 text-danger"></i>
                                 <div>

@@ -2,7 +2,8 @@
 include "./php-ajax/config.php";
 session_start();
 if(!isset($_SESSION['user_name'])){
-  header('Location: http://localhost/ambition-institute/NiceAdmin/login.php');
+  // header('http://ambition-computer-institute.great-site.net/NiceAdmin/login.php');
+  header('localhost/ambition-institute/NiceAdmin/login.php');
 } ?>
 <header id="header" class="header fixed-top d-flex align-items-center">
 

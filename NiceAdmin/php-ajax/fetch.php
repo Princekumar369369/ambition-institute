@@ -48,8 +48,8 @@ $id = $_POST['id'];
     $output = "";
     while($rows = mysqli_fetch_assoc($result)){
         $output .= "<div class='mb-2'>
-        <input type='file' class='form-control' name='image_file_course_update'>
-        <input type='text' value='{$rows['course_img']}' name='old_image_course' hidden>
+        <input type='file' class='form-control'  name='image_file_course_update'>
+        <input type='text' value='{$rows['course_img']}'  name='old_image_course' hidden>
 
       </div>
       <div class='mb-2'>

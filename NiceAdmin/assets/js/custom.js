@@ -109,7 +109,6 @@ $(document).ready(function () {
     let formId = document.getElementById('del-course-modal');
     let formData = new FormData(formId);
     formData.append('enterId', 1);
-    alert(formData.get('course-id'));
     $.ajax({
       url: "./php-ajax/delete.php",
       type: "POST",
@@ -247,6 +246,40 @@ $(document).ready(function () {
         
       });
     })
+
+
+// del student 
+$(document).on('click','.del-student-modal',function(){
+  let id = $(this).data('id');
+  let img = $(this).data('img');
+  $('#student_id').val(id);
+  $('#student_img').val(img);
+})
+$(document).on('click','#del-student',function(){
+  let formId = document.getElementById('del-student-form');
+  let formData = new FormData(formId);
+  formData.append('enterId', 3);
+  alert(formData.get('enterId'))
+  $.ajax({
+    url: "./php-ajax/delete.php",
+    type: "POST",
+    data: formData,
+    contentType: false,
+    processData: false,
+    success: function (data) {
+      alert(data)
+      if(data == 1){
+        $('#delModalStudent').modal("hide");
+        notification("Succesfully deleted");
+        setInterval(notificationFade, 2000);
+        }
+      }
+    
+  });
+})
+
+
+
   $(document).on('click','#goback',function(){
     window.history.back()
   })
