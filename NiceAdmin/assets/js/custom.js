@@ -247,6 +247,30 @@ $(document).ready(function () {
       });
     })
 
+    // feching student data 
+    function getData(){
+      $.ajax({
+        url: 'php-ajax/fetch.php',
+        type: 'POST',
+        data: {enterId: '5'},
+        success: function(response){
+          if(response == 1){
+            $('.datatable-empty').show();
+          }else{
+            // $('.datatable-empty').hide();
+  
+            let count = 0;
+          $.each(response, function (key, value){
+            count++;
+            $('#admission-table tbody tr:first-child').hide();
+            $('#admission-table tbody').append('<tr><td>'+count+'</td><td>'+value['student_name']+'</td><td>'+value['email']+'</td><td>'+value['phone']+'</td><td>'+value['course_name']+'</td><td><a href="./student-details.php?sid='+value['sid']+'" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-binoculars-fill"></i></a> <button data-id='+value['sid']+' data-img="'+value['studentImage']+'" data-bs-toggle="modal"         data-bs-target="#delModalStudent" class="text-white btn btn-sm del-student-modal  del-btn" ><i class="bi bi-trash3-fill"></i></button></td></tr>');
+          })
+          }
+         
+        }
+      });
+    }
+    getData();
 
 // del student 
 $(document).on('click','.del-student-modal',function(){
@@ -259,7 +283,6 @@ $(document).on('click','#del-student',function(){
   let formId = document.getElementById('del-student-form');
   let formData = new FormData(formId);
   formData.append('enterId', 3);
-  alert(formData.get('enterId'))
   $.ajax({
     url: "./php-ajax/delete.php",
     type: "POST",
@@ -267,11 +290,12 @@ $(document).on('click','#del-student',function(){
     contentType: false,
     processData: false,
     success: function (data) {
-      alert(data)
       if(data == 1){
         $('#delModalStudent').modal("hide");
         notification("Succesfully deleted");
         setInterval(notificationFade, 2000);
+        $('#admission-table tbody').html('<tr style="display: none;"><td class="datatable-empty" colspan="6">No entries found</td></tr>');
+        getData();
         }
       }
     
@@ -286,4 +310,4 @@ $(document).on('click','#del-student',function(){
 
   
  
-})
+});

@@ -37,7 +37,7 @@
                             </div>
                             <div class="modal-body text-center">
                                 <form id='del-student-form'>
-                                    <input type="number" id='student_id' hidden name='student-id'>
+                                    <input type="number" id='student_id' hidden  name='student-id'>
                                     <input type="text" id='student_img' hidden  name='student-img'>
                                 </form>
                                 <i class="bi bi-exclamation-triangle h3 text-danger"></i>
@@ -74,47 +74,13 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
-                <?php
-                      include "./php-ajax/config.php";
-                      $sql = "SELECT * FROM `student_admissions` JOIN `course` on student_admissions.course = course.cid WHERE student_admissions.status = 1 ";
-                      $result = mysqli_query($conn,$sql);
-                      $numRows = mysqli_num_rows($result);
-                      $count = 0;
-                      if($numRows > 0){
-                        while($rows = mysqli_fetch_assoc($result)){
-                          $count++;
-                      ?>
-
-                      <tr>
-                        <td>
-                          <?php echo $count; ?>
-                        </td>
-                        <td>
-                          <?php echo $rows['student_name']   ?>
-                        </td>
-                        <td>
-                          <?php echo $rows['email']   ?>
-                        </td>
-                        <td>
-                         +91 <?php echo $rows['phone']   ?>
-                        </td>
-                        <td>
-                        <?php echo $rows['course_name']   ?>
-                        </td>
-                        <td><a href="./student-details.php?sid=<?php echo $rows['sid'] ?>"
-                            class="btn btn-outline-primary btn-sm edit-btn"><?php if($rows['status'] == 0){
-                            echo "<i class='bi bi-pencil-square'></i>";
-                          }else{
-                            echo '<i class="bi bi-binoculars-fill"></i>';
-                          }
-                          ?></a>
-                          <button data-id='<?php echo $rows['sid'] ?>' data-img='<?php echo $rows['studentImage'] ?>'  data-bs-toggle='modal'
-                               data-bs-target='#delModalStudent' class="text-white btn btn-sm del-student-modal  del-btn"><i class="bi bi-trash3-fill"></i></button>
-                        </td>
-                      </tr>
+                <tbody class='student-table-body'>
+                 
                       
-                      <?php }}?>
+
+                   
+                      
+                      
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
@@ -125,12 +91,16 @@
         </div>
       </div>
     </section>
+ <!-- notification section  -->
+ <div class="notification position-fixed" id="notification">
 
+</div>
   </main><!-- End #main --><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <?php include "./component/footer.php" ?>
-
+  <!-- <script>$(document).ready(function(){alert();})</script> -->
+  
 
 </body>
 

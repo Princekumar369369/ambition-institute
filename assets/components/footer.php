@@ -30,7 +30,7 @@
                                 
                                
                                 <li><span>Sunday :</span>Closed</li>
-                                <li><a href="http://ambition-computer-institute.great-site.net/NiceAdmin/login.php">Login</a></li>
+                                <li><a href="./NiceAdmin/login.php">Login</a></li>
                             </ul>
                         </div>
                     </div>

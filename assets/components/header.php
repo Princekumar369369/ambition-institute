@@ -1,4 +1,9 @@
 <head>
+<?php
+session_start();
+if(isset($_SESSION['user_name'])){
+  header('Location: http://localhost/ambition-institute/NiceAdmin/index.php');
+} ?>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Edification - Responsive Education HTML5 Template</title>

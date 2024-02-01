@@ -64,6 +64,7 @@ include "./component/head.php"; ?>
                     </div> -->
                     <div class="col-12">
                       <button class="btn btn-primary w-100" name='login-btn' type="submit">Login</button>
+                      <a href="http://localhost/ambition-institute/">go back</a>
                     </div>
                     <div class="col-12">
                       <!-- <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p> -->

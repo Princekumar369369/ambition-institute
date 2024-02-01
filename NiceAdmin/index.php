@@ -134,7 +134,7 @@
               <div class="card-body">
               <h3 class="card-title fw-bold">Total Students</h3>
                 <!-- Table with stripped rows -->
-                <table class="table datatable display" id="admission-table">
+                <table class="table datatable display" id="admission-table-dashboard">
                   <thead>
                     <tr>
                       <th>
@@ -144,7 +144,7 @@
                       <th>City</th>
                       <th data-type="date" data-format="YYYY/DD/MM">Start Date</th>
                       <th>Completion</th>
-                      <th>Completion</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -203,7 +203,6 @@
                               echo '<i class="bi bi-binoculars-fill"></i>';
                             }
                             ?></a>
-                            <a href="./student-details.php?sid=<?php echo $rows['sid'] ?>" class="text-white btn btn-sm  del-btn"><i class="bi bi-trash3-fill"></i></a>
                           </td>
                         </tr>
                         

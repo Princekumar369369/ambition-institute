@@ -19,7 +19,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Student Details/h1>
+      <h1>Student Details</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -33,7 +33,6 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body p-4">
-              <h3 class='fw-bold'>Student Detaills</h3>
               <div class="conatiner">
                 <?php
                   include "./php-ajax/config.php";
@@ -458,7 +457,7 @@
         data: {id: id, enterId: 1},
         success: function(data){
           if(data == 1){
-            window.location.assign("http://localhost/ambition-institute/NiceAdmin/index.php");
+            window.history.back();
 
           }
         }

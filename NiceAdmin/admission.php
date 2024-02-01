@@ -36,7 +36,7 @@
           <div class="card">
             <div class="card-body">
               <!-- Table with stripped rows -->
-              <table class="table datatable display" id="admission-table">
+              <table class="table datatable display" id="admission-table-fresh">
                 <thead>
                   <tr>
                     <th>
@@ -84,7 +84,7 @@
                             echo '<i class="bi bi-binoculars-fill"></i>';
                           }
                           ?></a>
-                          <a href="./student-details.php?sid=<?php echo $rows['sid'] ?>" class=" text-white btn btn-sm  del-btn"><i class="bi bi-trash3-fill"></i></a>
+                          <!-- <a href="./student-details.php?sid=<?php echo $rows['sid'] ?>" class=" text-white btn btn-sm  del-btn"><i class="bi bi-trash3-fill"></i></a> -->
                         </td>
                       </tr>
                       
