@@ -69,19 +69,20 @@ $(document).ready(function () {
             contentType: false,
             success: function (output) {
                 if (output == 1) {
-                    $("#popup-box").show();
-                   
-                    setTimeout(function () {
-                        $("#popup-box").hide();
-                        $("#admission-form").trigger('reset');
-                        $(".drop-zone__thumb").remove();
-
-                        $(".drop-zone").append("<span class='drop-zone__prompt'>Drop file here or click to upload</span>");;
-                        $("#myfile").val();
-                    }, 4000)
+                    alert('failed');
+                    
                 } 
                 else{
                     $("#popup-box").show();
+                    $("#popup-box").html(` <div class='container w-100 h-100 d-flex justify-content-center align-items-center'>
+                    <div class='row justify-content-center'>
+                        <div class='card col-12 position-relative'>
+                            <figure class='success-gif position-absolute'>
+                                <img src='./assets/images/icon/Animation - 1702138652342.gif' alt=''>
+                            </figure>
+                            <h2 class='p-5 text-center my-3'>Succesfully Saved</h2>
+                        </div>
+                    </div>`);
                    
                     setTimeout(function () {
                         $("#popup-box").hide();
@@ -109,7 +110,15 @@ $(document).ready(function () {
             success: function (data) {
                 if (data == 1) {
                     $("#popup-box").show();
-
+                    $("#popup-box").html(` <div class='container w-100 h-100 d-flex justify-content-center align-items-center'>
+                    <div class='row justify-content-center'>
+                        <div class='card col-12 position-relative'>
+                            <figure class='success-gif position-absolute'>
+                                <img src='./assets/images/icon/Animation - 1702138652342.gif' alt=''>
+                            </figure>
+                            <h2 class='p-5 text-center my-3'>Succesfully Saved</h2>
+                        </div>
+                    </div>`);
                     setTimeout(function () {
                         $("#popup-box").hide();
                         $("#contact_form").trigger('reset');

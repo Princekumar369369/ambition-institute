@@ -237,15 +237,7 @@
 
     <!-- teacher area end -->
     <section class="show-message position-fixed w-100 h-100 " id="popup-box">
-        <div class="container w-100 h-100 d-flex justify-content-center align-items-center">
-            <div class="row justify-content-center">
-                <div class="card col-12 position-relative">
-                    <figure class="success-gif position-absolute">
-                        <img src="./assets/images/icon/Animation - 1702138652342.gif" alt="">
-                    </figure>
-                    <h2 class="p-5 text-center my-3">Succesfully Saved</h2>
-                </div>
-            </div>
+       
         </div>
     </section>
     <!-- footer area start -->
