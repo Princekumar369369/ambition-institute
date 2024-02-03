@@ -6,7 +6,7 @@ if(isset($_SESSION['user_name'])){
 } ?>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edification - Responsive Education HTML5 Template</title>
+    <title>Ambition Computer Instiute</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">

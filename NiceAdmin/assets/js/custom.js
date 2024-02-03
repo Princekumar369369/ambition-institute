@@ -308,6 +308,6 @@ $(document).on('click','#del-student',function(){
     window.history.back()
   })
 
-  
+
  
 });

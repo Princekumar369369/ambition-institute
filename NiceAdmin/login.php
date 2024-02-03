@@ -3,14 +3,14 @@
 
 <head>
     
-<?php  session_start();
-
+<?php  
+session_start();
 include "./php-ajax/config.php";
+
 if(isset($_SESSION['user_name'])){
   header('Location: http://localhost/ambition-institute/NiceAdmin/index.php');
 } 
 include "./component/head.php"; ?>
-
 </head>
 
 <body>

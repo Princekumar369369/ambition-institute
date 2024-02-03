@@ -39,17 +39,17 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul id="m_menu_active">
-                                        <li class="active"><a href="./index.php">Home</a>
+                                        <li class="first-nav activation"><a href="./index.php">Home</a>
                                             
                                         </li>
-                                        <li><a href="./courses.php">Courses</a>
+                                        <li  class='activation'><a href="./courses.php">Courses</a> </li>
                                         
-                                    </li>
+                                   
                                     
-                                    <li><a href="./admission.php">Admission</a></li>
+                                    <li class='activation'><a href="./admission.php">Admission</a></li>
                                     <!-- <li><a href="./about.php">About</a></li> -->
                                         
-                                        <li><a href="./contact.php">Contact</a></li>
+                                        <li class='activation'><a href="./contact.php">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
