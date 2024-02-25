@@ -1272,3 +1272,14 @@ h6 {
   .datatable-container{
     overflow-x: scroll;
   }
+
+
+/* pagination  */
+.customPagination, .paginacaoCursor{
+  margin: 5px;
+  padding: 5px 8px;
+  color: black;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}

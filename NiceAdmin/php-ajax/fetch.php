@@ -5,38 +5,39 @@ if($_POST['enterId'] == 1){
     $result = mysqli_query($conn,$sql);
     $output = "";
     while($rows = mysqli_fetch_assoc($result)){
-     $output .= "<div class='col-lg-4 col-md-6 '>
-     <div class='card course-card border-1 ' style='border: 1px solid'>
-         <div class='course-thumb w-100'>
-             <img src='./upload-img/{$rows['course_img']}' class='img-fluid w-100 h-100' alt='image'>
-             <span class='cs-price primary-bg'>₹ {$rows['price']}</span>
-         </div>
-         <div class='card-body course-body position-relative p-3  p-25'> 
-             <div class='course-meta-title '>
-                 <div class='course-meta-text'>
-                     <h4><a href='course-details.html' class='mb-0'>{$rows['course_name']}</a></h4>
-                 </div> 
-             </div>
-             <p class='mb-1 course-para'>{$rows['text']}</p> 
-             <ul class='course-meta-details list-inline p-0 position-absolute bottom-0   w-100'>
-                 <li> 
-                  <p>Duration</p>
-                  <span>{$rows['duration']}</span>
-                 </li>
-                 <li>
-                   <p>Exam</p>
-                   <span>{$rows['exam']}</span>
-                 </li> 
-                 <li class='text-end pe-3'>
-                   <button  data-bs-toggle='modal'
-                   data-bs-target='#courseModalupdate' class='edit-btn btn btn-sm btn-primary course-edit-btn' data-cid='{$rows['cid']}'><i class='bi bi-pencil-square'></i></button> <br>
-                   <button data-bs-toggle='modal' data-bs-target='#delModal' class='mt-2 text-white btn btn-sm  del-btn del-btn-course' data-cid='{$rows['cid']}' data-img='{$rows['course_img']}'><i class='bi bi-trash3-fill'></i></button>
-                 </li>      
-             </ul>  
-       </div>
-     </div>
+     $output .= "<div class='tableItem col-lg-4 col-md-6 '>
+                    <div class='card course-card border-1 ' style='border: 1px solid'>
+                        <div class='course-thumb w-100'>
+                            <img src='./upload-img/{$rows['course_img']}' class='img-fluid w-100 h-100' alt='image'>
+                            <span class='cs-price primary-bg'>₹ {$rows['price']}</span>
+                        </div>
+                        <div class='card-body course-body position-relative p-3  p-25'> 
+                            <div class='course-meta-title '>
+                                <div class='course-meta-text'>
+                                    <h4><a href='course-details.html' class='mb-0'>{$rows['course_name']}</a></h4>
+                                </div> 
+                            </div>
+                            <p class='mb-1 course-para'>{$rows['text']}</p> 
+                            <ul class='course-meta-details list-inline p-0 position-absolute bottom-0   w-100'>
+                                <li> 
+                                  <p>Duration</p>
+                                  <span>{$rows['duration']}</span>
+                                </li>
+                                <li>
+                                  <p>Exam</p>
+                                  <span>{$rows['exam']}</span>
+                                </li> 
+                                <li class='text-end pe-3'>
+                                  <button  data-bs-toggle='modal'
+                                  data-bs-target='#courseModalupdate' class='edit-btn btn btn-sm btn-primary course-edit-btn' data-cid='{$rows['cid']}'><i class='bi bi-pencil-square'></i></button> <br>
+                                  <button data-bs-toggle='modal' data-bs-target='#delModal' class='mt-2 text-white btn btn-sm  del-btn del-btn-course' data-cid='{$rows['cid']}' data-img='{$rows['course_img']}'><i class='bi bi-trash3-fill'></i></button>
+                                </li>      
+                            </ul>  
+                      </div>
+                    </div>
          </div>";
     }
+    
     echo $output;
 }
 
@@ -80,7 +81,7 @@ $id = $_POST['id'];
       $result = mysqli_query($conn,$sql);
       $output = "";
       while($rows = mysqli_fetch_assoc($result)){
-       $output .= "<div class='col-md-4'>
+       $output .= "<div class='col-md-4 tableItem'>
        <div class='card mb-5'>
          <img src='./upload-img/{$rows['teacher_img']}' alt='teacher-image'>
          <div class='card-body teacher-content justify-content-between align-items-center row p-25'>

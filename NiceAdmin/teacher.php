@@ -175,14 +175,18 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title fw-bold"></h3>
-                            <div class="row" id="teacher_place">
+                            <div class="row paginationTable" id="teacher_place">
                                 <!-- course single start -->
 
 
 
                                 <!-- course single end -->
                             </div>
-
+                            <div id="pagination-container" class='d-flex justify-content-center'>
+                                <p class='paginacaoCursor' id="beforePagination"> <
+                                </p>
+                                <p class='paginacaoCursor' id="afterPagination">></p>
+                            </div>
                         </div>
                     </div>
 
