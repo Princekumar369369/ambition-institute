@@ -95,8 +95,8 @@ include "./component/head.php"; ?>
 <?php
   if(isset($_POST['login-btn'])){
     include "./php-ajax/config.php";
-    $userName = $_POST['username'];
-    $password = $_POST['password'];
+    $userName = mysqli_real_escape_string($conn,$_POST['username']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
     $sql = "SELECT * FROM `user` WHERE user_name = '{$userName}' AND user_password = '{$password}'";
 echo $sql;
     $result = mysqli_query($conn,$sql);

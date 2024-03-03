@@ -72,7 +72,7 @@
                           <?php echo $rows['email']   ?>
                         </td>
                         <td>
-                         +91 <?php echo $rows['phone']   ?>
+                         +91  <?php echo $rows['phone']   ?>
                         </td>
                         <td>
                         <?php echo $rows['course_name']   ?>
@@ -84,7 +84,7 @@
                             echo '<i class="bi bi-binoculars-fill"></i>';
                           }
                           ?></a>
-                          <!-- <a href="./student-details.php?sid=<?php echo $rows['sid'] ?>" class=" text-white btn btn-sm  del-btn"><i class="bi bi-trash3-fill"></i></a> -->
+                          <button data-id="<?php echo $rows['sid'] ?>" data-img='<?= $rows['studentImage'] ?>' id="del-addmission" data-bs-toggle='modal' data-bs-target='#delModalAddmission' class=" text-white btn btn-sm  del-btn"><i class="bi bi-trash3-fill"></i></a>
                         </td>
                       </tr>
                       
@@ -92,7 +92,31 @@
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
-
+              <div class="modal fade" id="delModalAddmission" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <form id='del-course-modal'>
+                                    <input type="number" id='addmission_id' hidden  name='addmission-id'>
+                                    <input type="text" id='addmission_img' hidden  name='addmission-img'>
+                                </form>
+                                <i class="bi bi-exclamation-triangle h3 text-danger"></i>
+                                <div>
+                                    Are you sure to delete?
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm del-btn  mx-auto text-white"
+                                    id="del-admission">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
 
@@ -104,7 +128,36 @@
 
   <!-- ======= Footer ======= -->
   <?php include "./component/footer.php" ?>
+<script>
+  $(document).ready(function(){
+    $(document).on('click','#del-addmission',function(){
+      let id = $(this).data('id'); 
+      let img = $(this).data('img');
+      $("#addmission_id").val(id);
+      $("#addmission_img").val(img);
+    })
 
+    $("#del-admission").click(function(){
+      let formId = document.getElementById('del-course-modal');
+      let formData = new FormData(formId);
+      formData.append('enterId', 4);
+      $.ajax({
+        url: './php-ajax/delete.php',
+        type: 'post',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data){
+          if(data == 1){
+           location.reload();       
+          }else{
+            alert('have some mistake');   
+          }
+        }
+      })
+    })
+  })
+</script>
 
 </body>
 

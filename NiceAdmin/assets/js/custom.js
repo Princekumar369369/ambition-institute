@@ -1,7 +1,7 @@
 $(document).ready(function () {
   const myTimeout = setTimeout(myGreeting, 500);
   function myGreeting() {
-  
+
     var HZperPage = 3,//number of results per page
       HZwrapper = 'paginationTable',//wrapper class
       HZlines = 'tableItem',//items class
@@ -24,29 +24,29 @@ $(document).ready(function () {
         } else $(".paginacaoValor").hide(), exibir2 = $(".paginacaoValor").slice(0, 5).show();
       }
     }
-    
-  
+
+
     paginationShow(), $("#beforePagination").hide(), $("." + HZlines).hide();
     for (var tamanhotabela = $("." + HZwrapper).children().length, porPagina = HZperPage, paginas = Math.ceil(tamanhotabela / porPagina), i = 1; i <= paginas;)
       $("#" + HZpaginationId).append("<p class='paginacaoValor " + HZpaginationCustomClass + "' data-valor=" + i + ">" + i + "</p>"), i++, $(".paginacaoValor").hide(), exibir2 = $(".paginacaoValor").slice(0, 5).show(); $(".paginacaoValor:eq(0)").css("background", "" + HZpaginationColorActive).addClass("activePagination");
-    
-      function getExibir(){
-        var exibir = $("." + HZlines).slice(0, porPagina).show();
-      }
-      getExibir();
 
-    $(".paginacaoValor").on("click", function fireIt () { $(".paginacaoValor").css("background", "" + HZpaginationColorDefault).removeClass("activePagination"), $(this).css("background", "" + HZpaginationColorActive).addClass("activePagination"); var a = $(this).attr("data-valor"), i = a * porPagina, o = i - porPagina; $("." + HZlines).hide(), exibir = $("." + HZlines).slice(o, i).show(), "1" === a ? $("#beforePagination").hide() : $("#beforePagination").show(), a === "" + $(".paginacaoValor:last").attr("data-valor") ? $("#afterPagination").hide() : $("#afterPagination").show(), paginationShow() }), $(".paginacaoValor").last().after($("#afterPagination")), $("#beforePagination").on("click", function () { var a = $(".activePagination").attr("data-valor"), i = parseInt(a) - 1; $("[data-valor=" + i + "]").click(), paginationShow() }), $("#afterPagination").on("click", function () { var a = $(".activePagination").attr("data-valor"), i = parseInt(a) + 1; $("[data-valor=" + i + "]").click(), paginationShow() }), $(".paginacaoValor").css("float", "left"), $("." + HZpaginationArrowsClass).css("float", "left");
+    function getExibir() {
+      var exibir = $("." + HZlines).slice(0, porPagina).show();
+    }
+    getExibir();
+
+    $(".paginacaoValor").on("click", function fireIt() { $(".paginacaoValor").css("background", "" + HZpaginationColorDefault).removeClass("activePagination"), $(this).css("background", "" + HZpaginationColorActive).addClass("activePagination"); var a = $(this).attr("data-valor"), i = a * porPagina, o = i - porPagina; $("." + HZlines).hide(), exibir = $("." + HZlines).slice(o, i).show(), "1" === a ? $("#beforePagination").hide() : $("#beforePagination").show(), a === "" + $(".paginacaoValor:last").attr("data-valor") ? $("#afterPagination").hide() : $("#afterPagination").show(), paginationShow() }), $(".paginacaoValor").last().after($("#afterPagination")), $("#beforePagination").on("click", function () { var a = $(".activePagination").attr("data-valor"), i = parseInt(a) - 1; $("[data-valor=" + i + "]").click(), paginationShow() }), $("#afterPagination").on("click", function () { var a = $(".activePagination").attr("data-valor"), i = parseInt(a) + 1; $("[data-valor=" + i + "]").click(), paginationShow() }), $(".paginacaoValor").css("float", "left"), $("." + HZpaginationArrowsClass).css("float", "left");
   }
 
-            
-            function late(){
-              let tableLenth =$('.tableItem').length;
-              for(let i= 3; i<tableLenth; i++){
-                document.getElementsByClassName('tableItem')[i].style.display = "none";
-              }
-            }
-  function getPaginationBtn(){
-   return $('#pagination-container').html(`<p class='paginacaoCursor' id='beforePagination'><</p>
+
+  function late() {
+    let tableLenth = $('.tableItem').length;
+    for (let i = 3; i < tableLenth; i++) {
+      document.getElementsByClassName('tableItem')[i].style.display = "none";
+    }
+  }
+  function getPaginationBtn() {
+    return $('#pagination-container').html(`<p class='paginacaoCursor' id='beforePagination'><</p>
     <p class='paginacaoCursor' id='afterPagination'>></p>`);
   }
   $(document).on("click", '#save_course', function () {
@@ -66,8 +66,8 @@ $(document).ready(function () {
           setInterval(notificationFade, 2000);
           showCourses();
           $("#course_submit").trigger("reset");
-          
-         getPaginationBtn()
+
+          getPaginationBtn()
           const myTimeout = setTimeout(myGreeting, 1000);
 
         }
@@ -145,7 +145,7 @@ $(document).ready(function () {
           $("#course_submit").trigger("reset");
           showCourses();
           const newTimeout = setTimeout(late, 500);
-              
+
         }
       }
     });
@@ -178,7 +178,7 @@ $(document).ready(function () {
           setInterval(notificationFade, 2000);
           showCourses();
 
-         getPaginationBtn()
+          getPaginationBtn()
           const myTimeout = setTimeout(myGreeting, 1000);
 
         }
@@ -213,8 +213,8 @@ $(document).ready(function () {
         notification("Succesfully inserted");
         setInterval(notificationFade, 2000);
         $("#teacher_submit").trigger("reset");
-       getPaginationBtn()
-          const myTimeout = setTimeout(myGreeting, 1000);
+        getPaginationBtn()
+        const myTimeout = setTimeout(myGreeting, 1000);
       }
     });
   })
@@ -305,7 +305,7 @@ $(document).ready(function () {
           notification("Succesfully deleted");
           setInterval(notificationFade, 2000);
           showTeacher();
-         getPaginationBtn()
+          getPaginationBtn()
           const myTimeout = setTimeout(myGreeting, 1000);
         }
       }

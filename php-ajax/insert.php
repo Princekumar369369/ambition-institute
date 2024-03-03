@@ -1,24 +1,24 @@
 <?php
 include "./config.php";
  if($_POST["checkId"] == 1){
-    $studentName = $_POST["stu_name"];
-    $fatherName = $_POST["father_name"];
-    $motherName = $_POST["mother_name"];
-    $mobile = $_POST["add_phone"];
-    $email = $_POST["add_email"];
-    $address = $_POST["address"];
-    $aadhar_num = $_POST["aadhar_num"];
-    $qualification = $_POST['qualification'];
-    $class = $_POST["class"];
-    $subject = $_POST["subject"];
-    $mark= $_POST["mark"];
-    $roll_num = $_POST["roll-num"];
-    $school_name = $_POST['school-name'];
+    $studentName = mysqli_real_escape_string($conn,$_POST["stu_name"]);
+    $fatherName = mysqli_real_escape_string($conn,$_POST["father_name"]);
+    $motherName = mysqli_real_escape_string($conn,$_POST["mother_name"]);
+    $mobile = mysqli_real_escape_string($conn,$_POST["add_phone"]);
+    $email = mysqli_real_escape_string($conn,$_POST["add_email"]);
+    $address = mysqli_real_escape_string($conn,$_POST["address"]);
+    $aadhar_num = mysqli_real_escape_string($conn,$_POST["aadhar_num"]);
+    $qualification = mysqli_real_escape_string($conn,$_POST['qualification']);
+    $class = mysqli_real_escape_string($conn,$_POST["class"]);
+    $subject = mysqli_real_escape_string($conn,$_POST["subject"]);
+    $mark= mysqli_real_escape_string($conn,$_POST["mark"]);
+    $roll_num = mysqli_real_escape_string($conn,$_POST["roll-num"]);
+    $school_name = mysqli_real_escape_string($conn,$_POST['school-name']);
    //  $i_school_name = $_POST["i_school_name"];
    //  $i_mark_percent = $_POST["i_mark_percent"];
-    $course = $_POST["course"];
-    $exam = $_POST["exam"];
-    $course_duration = $_POST["course_duration"];
+    $course = mysqli_real_escape_string($conn,$_POST["course"]);
+    $exam = mysqli_real_escape_string($conn,$_POST["exam"]);
+    $course_duration = mysqli_real_escape_string($conn,$_POST["course_duration"]);
 
 
 
@@ -39,10 +39,10 @@ include "./config.php";
  }
 
  if($_POST["checkId"] == 2){
-    $user_name = $_POST['user_name'];
-    $user_email = $_POST['user_email'];
-    $user_subject = $_POST['user_subject'];
-    $user_msg = $_POST['user_msg'];
+    $user_name = mysqli_real_escape_string($conn,$_POST['user_name']);
+    $user_email = mysqli_real_escape_string($conn,$_POST['user_email']);
+    $user_subject = mysqli_real_escape_string($conn,$_POST['user_subject']);
+    $user_msg = mysqli_real_escape_string($conn,$_POST['user_msg']);
    
     $sql = "INSERT INTO `coutact_us`( `user_name`, `user_email`, `user_subject`, `user_massage`) VALUES ('$user_name','$user_email','$user_subject','$user_msg')";
 
